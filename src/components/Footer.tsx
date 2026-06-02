@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-white py-12">
+    <footer className="bg-purple-dark text-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -20,7 +20,7 @@ export default function Footer() {
               <li><Link href="/book" className="hover:text-gold-light transition-colors">Download the Book</Link></li>
               <li><Link href="/pledge" className="hover:text-gold-light transition-colors">Stand in the Gap</Link></li>
               <li><Link href="/resources" className="hover:text-gold-light transition-colors">Resources</Link></li>
-              <li><Link href="/support" className="hover:text-gold-light transition-colors">Support This Ministry</Link></li>
+              <li><Link href="/support" className="hover:text-gold-light transition-colors">Support This Work</Link></li>
             </ul>
           </div>
 
@@ -33,7 +33,7 @@ export default function Footer() {
               href="https://wa.me/?text=Check%20out%20The%20Great%20Pretence%20-%20a%20free%20e-book%20calling%20the%20church%20to%20real%20love%3A%20https://ezekiel22v30.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-sage hover:bg-sage-light text-white px-4 py-2 rounded text-sm transition-colors"
+              className="inline-block bg-purple hover:bg-purple-light text-white px-4 py-2 rounded text-sm transition-colors"
             >
               Share on WhatsApp
             </a>

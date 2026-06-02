@@ -47,7 +47,7 @@ export default function BookPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-sage to-sage-light text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-purple to-purple-light text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
@@ -103,7 +103,7 @@ export default function BookPage() {
                 className="bg-white rounded-lg shadow-md p-6 border-l-4 border-gold hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-start gap-4">
-                  <span className="text-sage font-bold text-sm whitespace-nowrap">
+                  <span className="text-purple font-bold text-sm whitespace-nowrap">
                     {chapter.number}
                   </span>
                   <div>
@@ -121,7 +121,7 @@ export default function BookPage() {
             <a
               href="/the-great-pretence.pdf"
               download
-              className="inline-block bg-sage hover:bg-sage-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
+              className="inline-block bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
             >
               Download the Full Book
             </a>

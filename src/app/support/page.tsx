@@ -2,13 +2,13 @@ export default function SupportPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-sage to-sage-light text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-purple to-purple-light text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-6">
-            Support This Ministry
+            Support This Work
           </h1>
           <p className="text-xl text-gray-200">
-            Help keep this book free and this website running
+            Help keep this book free and its message running
           </p>
         </div>
       </section>
@@ -26,9 +26,10 @@ export default function SupportPage() {
                 But there are real costs to keeping it that way.
               </p>
               <p className="text-text mb-4">
-                Domain names cost money. Hosting costs money. Creating resources 
-                for churches costs money. Every donation helps us keep the message 
-                free for everyone, everywhere.
+                We need domain name registration, internet connection, upgrading 
+                of current desktop, electrical supplies and food. Hosting costs money. 
+                Creating resources to help the body of Christ executing this vision 
+                costs money. Every donation helps us keep the message free for everyone, everywhere.
               </p>
               <p className="text-text italic text-lg border-l-4 border-gold pl-4 mt-6">
                 &ldquo;A closed fist cannot receive anything. A person turned entirely 
@@ -44,11 +45,11 @@ export default function SupportPage() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-gray-200 pb-3">
                   <span className="text-text">Domain name renewal</span>
-                  <span className="text-sage font-bold">~$15/year</span>
+                  <span className="text-purple font-bold">~$15/year</span>
                 </div>
                 <div className="flex items-center justify-between border-b border-gray-200 pb-3">
                   <span className="text-text">Website hosting</span>
-                  <span className="text-sage font-bold">Free (for now)</span>
+                  <span className="text-purple font-bold">Free (for now)</span>
                 </div>
                 <div className="flex items-center justify-between border-b border-gray-200 pb-3">
                   <span className="text-text">Resource creation</span>
@@ -86,8 +87,8 @@ export default function SupportPage() {
               Donation integration coming soon.
             </p>
             <p className="text-text">
-              In the meantime, if you would like to support this ministry, 
-              please <a href="/contact" className="text-sage underline hover:text-sage-light">contact us</a> and we will provide donation details.
+              In the meantime, if you would like to support this work, 
+              please <a href="/contact" className="text-purple underline hover:text-purple-light">contact us</a> and we will provide donation details.
             </p>
           </div>
 

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-sage to-sage-light text-white py-20 md:py-32">
+      <section className="relative bg-gradient-to-b from-purple to-purple-light text-white py-20 md:py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <p className="text-gold-light text-sm md:text-base uppercase tracking-widest mb-6">
             A Letter to the Church
@@ -28,7 +28,7 @@ export default function Home() {
             </Link>
             <Link
               href="/pledge"
-              className="border-2 border-white hover:bg-white hover:text-sage font-bold px-8 py-4 rounded-lg text-lg transition-colors"
+              className="border-2 border-white hover:bg-white hover:text-purple font-bold px-8 py-4 rounded-lg text-lg transition-colors"
             >
               I Will Stand
             </Link>
@@ -69,7 +69,7 @@ export default function Home() {
               </p>
               <Link
                 href="/book"
-                className="inline-block bg-sage hover:bg-sage-light text-white font-bold px-8 py-3 rounded-lg transition-colors"
+                className="inline-block bg-purple hover:bg-purple-light text-white font-bold px-8 py-3 rounded-lg transition-colors"
               >
                 Read More
               </Link>
@@ -120,7 +120,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/book"
-              className="bg-sage hover:bg-sage-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
+              className="bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
             >
               Download Free
             </Link>
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* Email Signup */}
-      <section className="py-16 bg-sage text-white">
+      <section className="py-16 bg-purple text-white">
         <div className="max-w-xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-playfair text-2xl font-bold mb-4">
             Stay Connected

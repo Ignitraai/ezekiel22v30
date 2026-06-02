@@ -7,7 +7,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-sage text-white sticky top-0 z-50 shadow-md">
+    <nav className="bg-purple text-white sticky top-0 z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="font-playfair text-xl font-bold tracking-wide">

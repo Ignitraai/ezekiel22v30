@@ -25,13 +25,19 @@ const resources = [
     type: "PDF",
     comingSoon: true,
   },
+  {
+    title: "Start an Acts Group in Your Community",
+    description: "A comprehensive guide on how to start and maintain an Acts Group in your community.",
+    type: "Guide",
+    comingSoon: true,
+  },
 ];
 
 export default function ResourcesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-sage to-sage-light text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-purple to-purple-light text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-6">
             Resources
@@ -55,7 +61,7 @@ export default function ResourcesPage() {
                   <h3 className="font-playfair text-xl font-bold text-dark">
                     {resource.title}
                   </h3>
-                  <span className="text-xs bg-sage/10 text-sage px-2 py-1 rounded">
+                  <span className="text-xs bg-purple/10 text-purple px-2 py-1 rounded">
                     {resource.type}
                   </span>
                 </div>
@@ -65,7 +71,7 @@ export default function ResourcesPage() {
                     Coming soon — we&apos;re working on it
                   </span>
                 ) : (
-                  <button className="bg-sage hover:bg-sage-light text-white font-bold px-4 py-2 rounded transition-colors">
+                  <button className="bg-purple hover:bg-purple-light text-white font-bold px-4 py-2 rounded transition-colors">
                     Download
                   </button>
                 )}
@@ -87,7 +93,7 @@ export default function ResourcesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/book"
-              className="bg-sage hover:bg-sage-light text-white font-bold px-8 py-3 rounded-lg transition-colors"
+              className="bg-purple hover:bg-purple-light text-white font-bold px-8 py-3 rounded-lg transition-colors"
             >
               Go to The Book
             </Link>
@@ -114,7 +120,7 @@ export default function ResourcesPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-sage hover:bg-sage-light text-white font-bold px-8 py-3 rounded-lg transition-colors"
+            className="inline-block bg-purple hover:bg-purple-light text-white font-bold px-8 py-3 rounded-lg transition-colors"
           >
             Contact Us
           </Link>

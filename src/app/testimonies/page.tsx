@@ -7,7 +7,7 @@ const testimonies = [
   },
   {
     name: "A Mother of Three",
-    text: "I shared this with my small group and we all cried together. For the first time, we were honest about our struggles. That night, we started planning how to help the family down the street who has nothing.",
+    text: "I shared this book with my small group and we all cried together. For the first time, we were honest about our struggles. That night, we started planning how to help the family down the street who has nothing.",
   },
   {
     name: "A Young Professional",
@@ -19,7 +19,7 @@ export default function TestimoniesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-sage to-sage-light text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-purple to-purple-light text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-6">
             Stories of Change
@@ -42,7 +42,7 @@ export default function TestimoniesPage() {
                 <p className="text-text italic text-lg mb-6 leading-relaxed">
                   &ldquo;{testimony.text}&rdquo;
                 </p>
-                <p className="text-sage font-bold">
+                <p className="text-purple font-bold">
                   &mdash; {testimony.name}
                 </p>
               </div>
@@ -63,7 +63,7 @@ export default function TestimoniesPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-sage hover:bg-sage-light text-white font-bold px-8 py-3 rounded-lg transition-colors"
+            className="inline-block bg-purple hover:bg-purple-light text-white font-bold px-8 py-3 rounded-lg transition-colors"
           >
             Send Us Your Testimony
           </Link>
@@ -71,7 +71,7 @@ export default function TestimoniesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-sage text-white">
+      <section className="py-16 bg-purple text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-playfair text-3xl font-bold mb-4">
             Be Part of the Change
@@ -88,7 +88,7 @@ export default function TestimoniesPage() {
             </Link>
             <Link
               href="/pledge"
-              className="border-2 border-white hover:bg-white hover:text-sage font-bold px-8 py-3 rounded-lg transition-colors"
+              className="border-2 border-white hover:bg-white hover:text-purple font-bold px-8 py-3 rounded-lg transition-colors"
             >
               Take the Pledge
             </Link>

@@ -15,7 +15,7 @@ export default function PledgePage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-sage to-sage-light text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-purple to-purple-light text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-6">
             I Will Stand
@@ -68,7 +68,7 @@ export default function PledgePage() {
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage text-text"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
                     placeholder="Your name"
                   />
                 </div>
@@ -79,7 +79,7 @@ export default function PledgePage() {
                   </label>
                   <input
                     type="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage text-text"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -102,9 +102,9 @@ export default function PledgePage() {
                         <input
                           type="checkbox"
                           value={item.id}
-                          className="mt-1 w-5 h-5 text-sage border-gray-300 rounded focus:ring-sage"
+                          className="mt-1 w-5 h-5 text-purple border-gray-300 rounded focus:ring-purple"
                         />
-                        <span className="text-text group-hover:text-sage transition-colors">
+                        <span className="text-text group-hover:text-purple transition-colors">
                           {item.label}
                         </span>
                       </label>
@@ -118,14 +118,14 @@ export default function PledgePage() {
                   </label>
                   <textarea
                     rows={3}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage text-text"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
                     placeholder="In my own words, I commit to..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-sage hover:bg-sage-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
+                  className="w-full bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
                 >
                   I Will Stand
                 </button>

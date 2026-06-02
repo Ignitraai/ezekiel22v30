@@ -2,11 +2,12 @@
 
 :root {
   --cream: #FDF8F0;
-  --sage: #5B7B5A;
-  --sage-light: #7A9D79;
-  --brown: #8B6914;
+  --purple: #4A2060;
+  --purple-light: #6B3A80;
+  --purple-dark: #2E1040;
   --gold: #C9A96E;
   --gold-light: #E8D5B0;
+  --gold-dark: #A08040;
   --dark: #2C2C2C;
   --text: #3D3D3D;
   --text-light: #6B6B6B;
@@ -14,11 +15,12 @@
 
 @theme inline {
   --color-cream: var(--cream);
-  --color-sage: var(--sage);
-  --color-sage-light: var(--sage-light);
-  --color-brown: var(--brown);
+  --color-purple: var(--purple);
+  --color-purple-light: var(--purple-light);
+  --color-purple-dark: var(--purple-dark);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
   --color-dark: var(--dark);
   --color-text: var(--text);
   --color-text-light: var(--text-light);

@@ -13,7 +13,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-sage to-sage-light text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-purple to-purple-light text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-6">
             Contact Us
@@ -51,7 +51,7 @@ export default function ContactPage() {
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage text-text"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
                     placeholder="Your name"
                   />
                 </div>
@@ -63,7 +63,7 @@ export default function ContactPage() {
                   <input
                     type="email"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage text-text"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                   <label className="block text-sm font-bold text-dark mb-2">
                     Subject
                   </label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage text-text">
+                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text">
                     <option value="general">General Question</option>
                     <option value="testimony">Share My Testimony</option>
                     <option value="resource">Request a Resource</option>
@@ -89,14 +89,14 @@ export default function ContactPage() {
                   <textarea
                     rows={5}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage text-text"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
                     placeholder="Write your message here..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-sage hover:bg-sage-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
+                  className="w-full bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
                 >
                   Send Message
                 </button>
@@ -131,7 +131,7 @@ export default function ContactPage() {
                 Support
               </h3>
               <p className="text-text-light text-sm">
-                Want to help keep this ministry running? Let us know.
+                Want to help keep this work running? Let us know.
               </p>
             </div>
           </div>
