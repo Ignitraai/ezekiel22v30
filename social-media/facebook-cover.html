@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 820px; height: 312px; overflow: hidden; font-family: Georgia, 'Times New Roman', serif; }
+.container {
+  width: 820px;
+  height: 312px;
+  background: linear-gradient(135deg, #4A2060 0%, #2E1040 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.content {
+  text-align: center;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+.quote {
+  font-size: 24px;
+  color: white;
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+.quote::before { content: '\201C'; color: #C9A96E; font-size: 40px; }
+.quote::after { content: '\201D'; color: #C9A96E; font-size: 40px; }
+.reference {
+  font-size: 16px;
+  color: #C9A96E;
+  margin-bottom: 16px;
+}
+.site-name {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.url {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 8px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="content">
+    <div class="quote">I looked for someone to stand in the gap on behalf of the land, so that I would not have to destroy it. But I found no one. Not one.</div>
+    <div class="reference">— Ezekiel 22:30</div>
+    <div class="site-name">Ezekiel 22:30</div>
+    <div class="url">ezekiel22v30.vercel.app</div>
+  </div>
+</div>
+</body>
+</html>

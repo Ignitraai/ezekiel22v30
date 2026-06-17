@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Navigation() {
@@ -10,8 +11,17 @@ export default function Navigation() {
     <nav className="bg-purple text-white sticky top-0 z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="font-playfair text-xl font-bold tracking-wide">
-            Ezekiel 22:30
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/logo.webp"
+              alt="Ezekiel 22:30"
+              width={60}
+              height={40}
+              className="h-12 w-auto"
+            />
+            <span className="font-playfair text-xl font-bold tracking-wide hidden sm:inline">
+              Ezekiel 22:30
+            </span>
           </Link>
 
           {/* Desktop nav */}

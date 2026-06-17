@@ -42,7 +42,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
               <Image
-                src="/cover.jpg"
+                src="/cover.webp"
                 alt="The Great Pretence - Book Cover"
                 width={400}
                 height={560}

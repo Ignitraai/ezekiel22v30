@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 2560px; height: 1440px; overflow: hidden; font-family: Georgia, 'Times New Roman', serif; }
+.container {
+  width: 2560px;
+  height: 1440px;
+  background: linear-gradient(135deg, #4A2060 0%, #2E1040 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.container::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: 200px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(201,169,110,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.container::after {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: 200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  padding: 80px;
+  position: relative;
+  z-index: 1;
+}
+.left {
+  text-align: left;
+  max-width: 900px;
+}
+.title {
+  font-size: 96px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+.subtitle {
+  font-size: 36px;
+  color: #C9A96E;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+.quote {
+  font-size: 28px;
+  color: rgba(255,255,255,0.8);
+  font-style: italic;
+  line-height: 1.6;
+  border-left: 4px solid #C9A96E;
+  padding-left: 24px;
+  margin-bottom: 40px;
+}
+.url {
+  font-size: 24px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 2px;
+}
+.right {
+  flex-shrink: 0;
+}
+.book {
+  width: 400px;
+  height: 540px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+}
+.book-cross {
+  font-size: 60px;
+  color: #C9A96E;
+  margin-bottom: 24px;
+}
+.book-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #4A2060;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.book-subtitle {
+  font-size: 18px;
+  color: #C9A96E;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="content">
+    <div class="left">
+      <div class="title">Ezekiel 22:30</div>
+      <div class="subtitle">A Call to Love That Costs Something</div>
+      <div class="quote">"I looked for someone to stand in the gap on behalf of the land, so that I would not have to destroy it. But I found no one. Not one."</div>
+      <div class="url">ezekiel22v30.vercel.app</div>
+    </div>
+    <div class="right">
+      <div class="book">
+        <div class="book-cross">✝</div>
+        <div class="book-title">THE GREAT PRETENCE</div>
+        <div class="book-subtitle">A Call to Love That Costs Something</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

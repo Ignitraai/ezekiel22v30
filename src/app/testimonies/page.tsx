@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
 const testimonies = [
@@ -16,6 +19,48 @@ const testimonies = [
 ];
 
 export default function TestimoniesPage() {
+  const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    setSending(true);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "957efb04-0c41-4099-8f59-ef5c87a74bd1",
+          subject: "New Testimony: The Great Pretence",
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("testimony"),
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong. Try again.");
+        setSending(false);
+        return;
+      }
+
+      setSubmitted(true);
+      setSending(false);
+    } catch {
+      setError("Network error. Please check your connection.");
+      setSending(false);
+    }
+  }
+
   return (
     <>
       {/* Hero */}
@@ -51,22 +96,86 @@ export default function TestimoniesPage() {
         </div>
       </section>
 
-      {/* Submit */}
+      {/* Submit Your Testimony */}
       <section className="py-16 bg-white">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="font-playfair text-3xl font-bold text-dark mb-6">
-            Share Your Story
-          </h2>
-          <p className="text-text-light mb-8">
-            Has this book changed something in you? Has it sparked action in your church or community? 
-            We would love to hear from you.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-purple hover:bg-purple-light text-white font-bold px-8 py-3 rounded-lg transition-colors"
-          >
-            Send Us Your Testimony
-          </Link>
+        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+          {submitted ? (
+            <div className="text-center">
+              <div className="text-6xl mb-6">✓</div>
+              <h2 className="font-playfair text-3xl font-bold text-dark mb-4">
+                Thank You
+              </h2>
+              <p className="text-text-light mb-8">
+                Your testimony has been received. It may be featured here to encourage others.
+              </p>
+              <Link
+                href="/"
+                className="inline-block bg-purple hover:bg-purple-light text-white font-bold px-8 py-3 rounded-lg transition-colors"
+              >
+                Back to Home
+              </Link>
+            </div>
+          ) : (
+            <>
+              <h2 className="font-playfair text-3xl font-bold text-dark mb-4 text-center">
+                Share Your Story
+              </h2>
+              <p className="text-text-light mb-8 text-center">
+                Has this book changed something in you? Has it sparked action in your church or community? 
+                We would love to hear from you.
+              </p>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-bold text-dark mb-2">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
+                    placeholder="Your name (or 'Anonymous')"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-bold text-dark mb-2">
+                    Your Email (optional — not shown publicly)
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
+                    placeholder="your@email.com"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-bold text-dark mb-2">
+                    Your Testimony
+                  </label>
+                  <textarea
+                    name="testimony"
+                    rows={6}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
+                    placeholder="Tell us what this book has meant to you..."
+                  />
+                </div>
+
+                {error && <p className="text-red-500 text-sm">{error}</p>}
+
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className="w-full bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors disabled:opacity-50"
+                >
+                  {sending ? "Sending..." : "Share My Testimony"}
+                </button>
+              </form>
+            </>
+          )}
         </div>
       </section>
 

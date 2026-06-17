@@ -1,13 +1,48 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    setSending(true);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "957efb04-0c41-4099-8f59-ef5c87a74bd1",
+          subject: formData.get("subject"),
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong. Try again.");
+        setSending(false);
+        return;
+      }
+
+      setSubmitted(true);
+      setSending(false);
+    } catch {
+      setError("Network error. Please check your connection.");
+      setSending(false);
+    }
   };
 
   return (
@@ -50,6 +85,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
+                    name="name"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
                     placeholder="Your name"
@@ -62,6 +98,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
                     placeholder="your@email.com"
@@ -72,13 +109,13 @@ export default function ContactPage() {
                   <label className="block text-sm font-bold text-dark mb-2">
                     Subject
                   </label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text">
-                    <option value="general">General Question</option>
-                    <option value="testimony">Share My Testimony</option>
-                    <option value="resource">Request a Resource</option>
-                    <option value="support">Support / Donate</option>
-                    <option value="church">Church Group Inquiry</option>
-                    <option value="other">Other</option>
+                  <select name="subject" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text">
+                    <option value="General Question">General Question</option>
+                    <option value="Share My Testimony">Share My Testimony</option>
+                    <option value="Resource Request">Request a Resource</option>
+                    <option value="Support / Donate">Support / Donate</option>
+                    <option value="Church Group Inquiry">Church Group Inquiry</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 
@@ -87,6 +124,7 @@ export default function ContactPage() {
                     Your Message
                   </label>
                   <textarea
+                    name="message"
                     rows={5}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
@@ -94,11 +132,14 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {error && <p className="text-red-500 text-sm">{error}</p>}
+
                 <button
                   type="submit"
-                  className="w-full bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
+                  disabled={sending}
+                  className="w-full bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors disabled:opacity-50"
                 >
-                  Send Message
+                  {sending ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
