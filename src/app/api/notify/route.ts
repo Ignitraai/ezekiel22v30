@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
 
     await transporter.sendMail({
       from: "thepretence@thesecretplace.today",
-      to: "thepretence@thesecretplace.today",
+      to: "coenraadbotha271@gmail.com",
       subject: "[The Great Pretence] " + subject,
       text: text,
     });
