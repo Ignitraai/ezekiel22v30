@@ -54,10 +54,16 @@ export default function BookPage() {
     setSending(true);
 
     try {
-      const res = await fetch("/api/subscribe", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({
+          access_key: "957efb04-0c41-4099-8f59-ef5c87a74bd1",
+          subject: "New download: The Great Pretence",
+          name,
+          email,
+          message: `Download request for The Great Pretence from ${name} (${email})`,
+        }),
       });
 
       const data = await res.json();
