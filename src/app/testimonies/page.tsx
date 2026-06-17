@@ -5,6 +5,18 @@ import Link from "next/link";
 
 const testimonies = [
   {
+    name: "H - Swakopmund",
+    text: "Stof tot nadenke.\nVerseker!",
+  },
+  {
+    name: "Gunter - Germany",
+    text: "A book you must read! It opens up new perspective in daily life of a Christian",
+  },
+  {
+    name: "Johan - Hermanus",
+    text: "Aangryplik! Ek bedoel die boek. Dit demonstreer die essensie van Christen wees. Die finale oordeel gaan waarskynlik oor versuim want die Evangelie is juis oor die nabyheid van God - en sy verkose manier is - deur ons.",
+  },
+  {
     name: "A Pastor in Windhoek",
     text: "I read this book in one sitting. It broke me. I have been leading my church for fifteen years and I realised I have been building a performance, not a community. Something has to change.",
   },
