@@ -101,12 +101,12 @@ export default function TestimoniesPage() {
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           {submitted ? (
             <div className="text-center">
-              <div className="text-6xl mb-6">✓</div>
+              <div className="text-6xl mb-6">&#10003;</div>
               <h2 className="font-playfair text-3xl font-bold text-dark mb-4">
-                Thank You
+                Thank You for Your Testimony
               </h2>
               <p className="text-text-light mb-8">
-                Your testimony has been received. It may be featured here to encourage others.
+                We will confirm when it is published.
               </p>
               <Link
                 href="/"

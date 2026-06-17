@@ -79,13 +79,12 @@ export default function PledgePage() {
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           {submitted ? (
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-              <div className="text-6xl mb-6">✓</div>
+              <div className="text-6xl mb-6">&#10003;</div>
               <h2 className="font-playfair text-3xl font-bold text-dark mb-4">
-                Thank You for Standing
+                Thank You for Standing With Us
               </h2>
               <p className="text-text-light mb-6">
-                You have made a commitment that matters. Now go and live it out. 
-                One person at a time. One act of love at a time.
+                Thank you for supporting the work and standing with us.
               </p>
               <p className="text-text italic">
                 &ldquo;Pick up the starfish. Throw it back. Keep walking and picking up more.&rdquo;
