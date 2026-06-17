@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
     const text = [
       "Hello " + name + ",",
       "",
-      "Thank you for your interest in "The Great Pretence."",
+      "Thank you for your interest in 'The Great Pretence.'",
       "",
       "To download your free copy, please confirm your email address by clicking the link below:",
       "",
