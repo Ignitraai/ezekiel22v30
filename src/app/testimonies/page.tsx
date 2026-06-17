@@ -41,6 +41,7 @@ export default function TestimoniesPage() {
           email: formData.get("email"),
           subject: "New Testimony: The Great Pretence",
           message: formData.get("testimony"),
+          type: "testimony",
         }),
       });
 

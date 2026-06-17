@@ -26,6 +26,7 @@ export default function PledgePage() {
         name,
         email: email || "not provided",
         subject: "New Pledge: I Will Stand",
+        type: "pledge",
         message: [
           "Commitments:",
           ...commitments.map((c: string) => `  - ${c}`),
