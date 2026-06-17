@@ -54,16 +54,10 @@ export default function BookPage() {
     setSending(true);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: "957efb04-0c41-4099-8f59-ef5c87a74bd1",
-          subject: "New download: The Great Pretence",
-          name,
-          email,
-          message: `Download request for The Great Pretence from ${name} (${email})`,
-        }),
+        body: JSON.stringify({ name, email }),
       });
 
       const data = await res.json();
@@ -76,8 +70,6 @@ export default function BookPage() {
 
       setSubmitted(true);
       setSending(false);
-      // Start download automatically
-      forceDownload();
     } catch {
       setError("Network error. Please check your connection.");
       setSending(false);
@@ -114,11 +106,12 @@ export default function BookPage() {
                 </form>
               ) : (
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <h3 className="font-playfair text-2xl font-bold mb-4 text-gold">Thank you, {name}!</h3>
-                  <button onClick={forceDownload} disabled={downloading} className="inline-block bg-gold hover:bg-gold-light text-dark font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg disabled:opacity-50">
-                    {downloading ? "Preparing..." : "Download Now"}
-                  </button>
-                  <p className="text-sm text-gray-300 mt-4">If the download does not start, <button onClick={forceDownload} className="underline text-gold cursor-pointer">click here</button>.</p>
+                  <div className="text-5xl mb-4 text-gold">&#9993;</div>
+                  <h3 className="font-playfair text-2xl font-bold mb-2 text-gold">Check Your Email</h3>
+                  <p className="text-gray-200 text-sm mb-2">A confirmation link has been sent to:</p>
+                  <p className="text-white font-bold text-lg mb-4">{email}</p>
+                  <p className="text-gray-300 text-sm">Click the link to confirm and download the book.</p>
+                  <p className="text-gray-400 text-xs mt-4">Didn&apos;t receive it? Check your spam folder.</p>
                 </div>
               )}
 
@@ -147,11 +140,9 @@ export default function BookPage() {
           </div>
           <div className="text-center mt-12">
             {!submitted ? (
-              <button onClick={scrollToForm} className="inline-block bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors">Download the Full Book</button>
+              <button onClick={scrollToForm} className="inline-block bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors">Get the Book Free</button>
             ) : (
-              <button onClick={forceDownload} disabled={downloading} className="inline-block bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors disabled:opacity-50">
-                {downloading ? "Preparing..." : "Download the Full Book"}
-              </button>
+              <button onClick={scrollToForm} className="inline-block bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors">Check Your Email</button>
             )}
           </div>
         </div>
