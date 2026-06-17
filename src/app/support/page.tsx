@@ -18,9 +18,12 @@ export default function SupportPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="font-playfair text-3xl font-bold text-dark mb-6">
-                Why We Ask
+              <h2 className="font-playfair text-3xl font-bold text-dark mb-2">
+                Bear One Another&apos;s Burdens
               </h2>
+              <p className="text-purple font-bold text-sm mb-6">
+                (Galatians 6:2)
+              </p>
               <p className="text-text mb-4">
                 Every amount helps. Whether it is the cost of a coffee or the cost of a meal,
                 your generosity keeps this message free for others.
@@ -31,9 +34,9 @@ export default function SupportPage() {
               </p>
               <p className="text-text mb-4">
                 We need domain name registration, internet connection, upgrading of current
-                desktop, electrical supplies and food. Hosting costs money. Creating
-                resources to help the body of Christ executing this vision costs money. Every
-                donation helps us keep the message free for everyone, everywhere. Most of
+                desktop, electrical supplies, Hosting etc. Creating resources to help the body
+                of Christ with effective tools in executing this vision costs money. Every bit
+                helps us keep the message free for everyone, everywhere. Most of
                 all: We NEED your prayers and you sharing this message.
               </p>
               <p className="text-text italic text-lg border-l-4 border-gold pl-4 mt-6">
