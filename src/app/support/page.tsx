@@ -46,29 +46,29 @@ export default function SupportPage() {
               </p>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="font-playfair text-2xl font-bold text-dark mb-6 text-center">
+            <div className="bg-white rounded-lg shadow-lg p-10">
+              <h3 className="font-playfair text-2xl font-bold text-dark mb-8 text-center">
                 Where Your Donation Goes
               </h3>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-gray-200 pb-3">
+              <div className="space-y-6">
+                <div className="flex items-center justify-between border-b border-gray-200 pb-4">
                   <span className="text-text">Domain name renewal</span>
                   <span className="text-purple font-bold">~$15/year</span>
                 </div>
-                <div className="flex items-center justify-between border-b border-gray-200 pb-3">
+                <div className="flex items-center justify-between border-b border-gray-200 pb-4">
                   <span className="text-text">Website hosting</span>
                   <span className="text-purple font-bold">Free (for now)</span>
                 </div>
-                <div className="flex items-center justify-between border-b border-gray-200 pb-3">
+                <div className="flex items-center justify-between border-b border-gray-200 pb-4">
                   <span className="text-text">Resource creation</span>
                   <span className="text-text-light italic">Ongoing</span>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between pb-2">
                   <span className="text-text">Future: outreach & translation</span>
                   <span className="text-text-light italic">Vision</span>
                 </div>
               </div>
-              <div className="mt-8 text-center">
+              <div className="mt-10 text-center">
                 <p className="text-text-light text-sm mb-4">
                   No obligation. Give only if God puts it on your heart.
                 </p>
