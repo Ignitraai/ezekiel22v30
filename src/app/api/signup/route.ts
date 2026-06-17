@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     });
 
     const textLines = [
-      "Hello " + name + ",",
+      "Dear " + name + ",",
       "",
       "Thank you for your interest in The Great Pretence.",
       "",
@@ -52,9 +52,9 @@ export async function POST(request: NextRequest) {
       "",
       "If you did not request this, please ignore this email.",
       "",
-      "May God bless you as you stand in the gap.",
+      "We trust you will enjoy this booklet. We will appreciate feedback once you completed reading it.",
       "",
-      "- The Great Pretence",
+      "The Ezekiel 22v30 Team",
     ];
 
     await transporter.sendMail({
