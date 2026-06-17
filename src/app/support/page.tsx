@@ -22,14 +22,19 @@ export default function SupportPage() {
                 Why We Ask
               </h2>
               <p className="text-text mb-4">
-                This book will always be free. The website will always be free. 
-                But there are real costs to keeping it that way.
+                Every amount helps. Whether it is the cost of a coffee or the cost of a meal,
+                your generosity keeps this message free for others.
               </p>
               <p className="text-text mb-4">
-                We need domain name registration, internet connection, upgrading 
-                of current desktop, electrical supplies and food. Hosting costs money. 
-                Creating resources to help the body of Christ executing this vision 
-                costs money. Every donation helps us keep the message free for everyone, everywhere.
+                This book will always be free. The website will always be free. But there are
+                real costs to keeping it that way.
+              </p>
+              <p className="text-text mb-4">
+                We need domain name registration, internet connection, upgrading of current
+                desktop, electrical supplies and food. Hosting costs money. Creating
+                resources to help the body of Christ executing this vision costs money. Every
+                donation helps us keep the message free for everyone, everywhere. Most of
+                all: We NEED your prayers and you sharing this message.
               </p>
               <p className="text-text italic text-lg border-l-4 border-gold pl-4 mt-6">
                 &ldquo;A closed fist cannot receive anything. A person turned entirely 
@@ -74,12 +79,8 @@ export default function SupportPage() {
       <section className="py-16 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-playfair text-3xl font-bold text-dark mb-6">
-            Give
+            Your Gift
           </h2>
-          <p className="text-text-light mb-8">
-            Every amount helps. Whether it is the cost of a coffee or the cost of a meal, 
-            your generosity keeps this message free for others.
-          </p>
 
           {/* PayPal Donate Button - Replace with actual PayPal link */}
           <div className="bg-cream rounded-lg p-8 mb-8">
