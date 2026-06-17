@@ -21,7 +21,7 @@ export default function BookPage() {
   const [error, setError] = useState("");
   const [downloading, setDownloading] = useState(false);
   const [sending, setSending] = useState(false);
-  const formRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   async function forceDownload() {
     setDownloading(true);
