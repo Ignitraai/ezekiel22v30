@@ -4,13 +4,57 @@ import { useState } from "react";
 
 export default function PledgePage() {
   const [submitted, setSubmitted] = useState(false);
-  const [pledgeCount, setPledgeCount] = useState(127);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setPledgeCount((prev) => prev + 1);
-    setSubmitted(true);
-  };
+    setError("");
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    const name = (formData.get("name") as string) || "Anonymous";
+    const email = formData.get("email") as string;
+    const commitments = formData.getAll("commitment") as string[];
+    const ownWords = formData.get("ownWords") as string;
+
+    setSending(true);
+
+    try {
+      const body: any = {
+        access_key: "957efb04-0c41-4099-8f59-ef5c87a74bd1",
+        subject: "New Pledge: I Will Stand",
+        name,
+        email: email || "not provided",
+        message: [
+          "Commitments:",
+          ...commitments.map((c: string) => `  - ${c}`),
+          ownWords ? `\nIn their own words:\n  ${ownWords}` : "",
+        ].join("\n"),
+      };
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong. Try again.");
+        setSending(false);
+        return;
+      }
+
+      setSubmitted(true);
+      setSending(false);
+    } catch {
+      setError("Network error. Please check your connection.");
+      setSending(false);
+    }
+  }
 
   return (
     <>
@@ -27,10 +71,6 @@ export default function PledgePage() {
             God is looking at your city. He is looking at your congregation. He is looking at you. 
             Will He find you?
           </p>
-          <div className="bg-white/10 rounded-lg px-8 py-4 inline-block">
-            <p className="text-3xl font-bold text-gold">{pledgeCount}</p>
-            <p className="text-sm text-gray-300">people have pledged to stand</p>
-          </div>
         </div>
       </section>
 
@@ -67,6 +107,7 @@ export default function PledgePage() {
                   </label>
                   <input
                     type="text"
+                    name="name"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
                     placeholder="Your name"
@@ -79,6 +120,7 @@ export default function PledgePage() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
                     placeholder="your@email.com"
                   />
@@ -101,7 +143,8 @@ export default function PledgePage() {
                       <label key={item.id} className="flex items-start gap-3 cursor-pointer group">
                         <input
                           type="checkbox"
-                          value={item.id}
+                          name="commitment"
+                          value={item.label}
                           className="mt-1 w-5 h-5 text-purple border-gray-300 rounded focus:ring-purple"
                         />
                         <span className="text-text group-hover:text-purple transition-colors">
@@ -117,17 +160,21 @@ export default function PledgePage() {
                     My commitment (optional)
                   </label>
                   <textarea
+                    name="ownWords"
                     rows={3}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple text-text"
                     placeholder="In my own words, I commit to..."
                   />
                 </div>
 
+                {error && <p className="text-red-500 text-sm">{error}</p>}
+
                 <button
                   type="submit"
-                  className="w-full bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
+                  disabled={sending}
+                  className="w-full bg-purple hover:bg-purple-light text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors disabled:opacity-50"
                 >
-                  I Will Stand
+                  {sending ? "Sending..." : "I Will Stand"}
                 </button>
               </form>
             </div>
