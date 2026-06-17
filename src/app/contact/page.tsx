@@ -17,14 +17,13 @@ export default function ContactPage() {
     setSending(true);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/notify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "957efb04-0c41-4099-8f59-ef5c87a74bd1",
-          subject: formData.get("subject"),
           name: formData.get("name"),
           email: formData.get("email"),
+          subject: formData.get("subject"),
           message: formData.get("message"),
         }),
       });

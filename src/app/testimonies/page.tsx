@@ -33,14 +33,13 @@ export default function TestimoniesPage() {
     setSending(true);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/notify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "957efb04-0c41-4099-8f59-ef5c87a74bd1",
-          subject: "New Testimony: The Great Pretence",
           name: formData.get("name"),
           email: formData.get("email"),
+          subject: "New Testimony: The Great Pretence",
           message: formData.get("testimony"),
         }),
       });

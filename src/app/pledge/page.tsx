@@ -23,10 +23,9 @@ export default function PledgePage() {
 
     try {
       const body: any = {
-        access_key: "957efb04-0c41-4099-8f59-ef5c87a74bd1",
-        subject: "New Pledge: I Will Stand",
         name,
         email: email || "not provided",
+        subject: "New Pledge: I Will Stand",
         message: [
           "Commitments:",
           ...commitments.map((c: string) => `  - ${c}`),
@@ -34,7 +33,7 @@ export default function PledgePage() {
         ].join("\n"),
       };
 
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/notify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
