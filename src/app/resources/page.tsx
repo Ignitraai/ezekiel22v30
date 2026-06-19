@@ -2,6 +2,13 @@ import Link from "next/link";
 
 const resources = [
   {
+    title: "The Love Action Launch",
+    description: "A one-evening guide for any church to start living the Recipe. Print-ready certificate-style PDF. Hand it to a pastor and say: start here.",
+    type: "PDF",
+    comingSoon: false,
+    link: "/The_Love_Action_Launch.pdf",
+  },
+  {
     title: "Church Group Discussion Guide",
     description: "A step-by-step guide for leading your small group through The Great Pretence. Includes discussion questions for each chapter.",
     type: "PDF",
@@ -71,9 +78,13 @@ export default function ResourcesPage() {
                     Coming soon — we&apos;re working on it
                   </span>
                 ) : (
-                  <button className="bg-purple hover:bg-purple-light text-white font-bold px-4 py-2 rounded transition-colors">
+                  <a
+                    href={resource.link}
+                    download
+                    className="inline-block bg-purple hover:bg-purple-light text-white font-bold px-4 py-2 rounded transition-colors"
+                  >
                     Download
-                  </button>
+                  </a>
                 )}
               </div>
             ))}
