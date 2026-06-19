@@ -6,7 +6,7 @@ import Link from "next/link";
 const testimonies = [
   {
     name: "A preacher from Windhoek",
-    text: "Wow, I haven't finished yet coz each chapter is a call to prayer and repentance. The vulnerability you portray here is what's missing in the church today hmmm. May God deliver me from pretence. Wow, I haven't finished yet coz each chapter is a call to prayer and repentance.",
+    text: "Wow, I haven't finished yet coz each chapter is a call to prayer and repentance. The vulnerability you portray here is what's missing in the church today hmmm. May God deliver me from pretence.",
   },
   {
     name: "H - Swakopmund",
