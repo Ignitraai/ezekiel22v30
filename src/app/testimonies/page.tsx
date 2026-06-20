@@ -9,6 +9,10 @@ const testimonies = [
     text: "Wow, I haven't finished yet coz each chapter is a call to prayer and repentance. The vulnerability you portray here is what's missing in the church today hmmm. May God deliver me from pretence.",
   },
   {
+    name: "Pastor - Hermanus",
+    text: "I have read this little book and it is a practical lesson of how far the Church has drifted from the great commission of Going into All the World and through The Demonstration of the Love Of God within, Making Disciples and not converts. It's Time to follow the example of Jesus Our Lord and Head of His Church. I have sent it on. Blessings.\uD83D\uDE4C",
+  },
+  {
     name: "H - Swakopmund",
     text: "Stof tot nadenke.\nVerseker!",
   },
