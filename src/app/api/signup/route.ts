@@ -35,10 +35,10 @@ export async function POST(request: NextRequest) {
     const confirmUrl = "https://ezekiel22v30.vercel.app/api/confirm?token=" + token;
 
     const transporter = nodemailer.createTransport({
-      host: "mail.thesecretplace.today",
+      host: "mail.ignitraai.com",
       port: 587,
       secure: false,
-      auth: { user: "thepretence@thesecretplace.today", pass: "Johnnyboy@9$%" },
+      auth: { user: "admin@ignitraai.com", pass: "Setup2026!" },
     });
 
     const textLines = [
@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
     ];
 
     await transporter.sendMail({
-      from: "thepretence@thesecretplace.today",
+      from: "admin@ignitraai.com",
       to: email,
       subject: "Confirm your download - The Great Pretence",
       text: textLines.join("\n"),

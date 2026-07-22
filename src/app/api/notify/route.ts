@@ -3,17 +3,17 @@ import nodemailer from "nodemailer";
 
 function makeTransporter(user: string, pass: string) {
   return nodemailer.createTransport({
-    host: "mail.thesecretplace.today",
+    host: "mail.ignitraai.com",
     port: 587,
     secure: false,
     auth: { user, pass },
   });
 }
 
-const COMPANY = "thepretence@thesecretplace.today";
-const COMPANY_PASS = "Johnnyboy@9$%";
-const NOREPLY = "noreply@thesecretplace.today";
-const NOREPLY_PASS = "TGP_Noreply_2026!";
+const COMPANY = "admin@ignitraai.com";
+const COMPANY_PASS = "Setup2026!";
+const NOREPLY = "admin@ignitraai.com";
+const NOREPLY_PASS = "Setup2026!";
 
 export async function POST(request: NextRequest) {
   try {
